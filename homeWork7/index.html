@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Функция для добавления товара в корзину
+function addToCart(product) {
+  // увеличиваем счетчик количества товаров
+  updateCartCounter();
+  // добавляем выбранный товар в список корзины
+  cartItems.push(product);
+}
+
+// Функция для изменения количества товаров в корзине
+function changeQuantity(product, newQuantity) {
+  // находим выбранный товар в корзине и изменяем его количество
+  for (let item of cartItems) {
+    if (item === product) {
+      item.quantity = newQuantity;
+      break;
+    }
+  }
+}
+
+// Обработчик события для кнопки Checkout
+document.getElementById('checkoutButton').addEventListener('click', function() {
+  // перенаправляем пользователя на страницу оформления заказа
+  window.location.href = 'checkout.html';
+});
+
+// Функция для валидации введенных данных пользователя на странице оформления заказа
+function validateOrderData() {
+  // реализация валидации данных
+}
+
+// Функция для отправки заказа на сервер
+function sendOrderToServer(order) {
+  // реализация отправки заказа
+}
+
+    </script>
+</body>
+</html>
